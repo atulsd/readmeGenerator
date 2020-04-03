@@ -9,7 +9,7 @@ const api = {
         api.data = res;
       });
     } catch (err) {
-      console.log(err);
+      console.log("Please check your details.");
     }
   }
 };
