@@ -9,12 +9,27 @@ function generateMarkdown(data) {
   [Description](#Description:)\n
   [Installation](#Installation:)\n
   [Usage](#Usage:)\n
-  [Licence](#Licene:)\n
+  [Licence](#Licence:)\n
   [Contributing](#Contributing:)\n
   [Tests](#Tests:)\n
   [Questions](#Questions:)\n
-
-
+  # Description:\n
+  ${data[0].desc}\n
+  # Installation:\n
+  Navigate to following folder\n
+  ${data[1].data.html_url + "/" + data[0].repo}\n
+  Clone the Repo\n
+  To view the web pages go to the following link\n
+  https://${data[1].data.login}.github.io/${data[0].repo}\n
+  # Usage\n
+  # Licence\n
+  # Contributing\n
+  # Tests\n
+  # Questions\n
+  1. ${data[2][0]}\n
+  2. ${data[2][1]}\n
+  3. ${data[2][2]}\n
+  4. ${data[2][3]}\n
 `;
 }
 
