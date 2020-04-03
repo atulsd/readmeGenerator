@@ -9,7 +9,8 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const questions = [
   "Enter your GitHub username:",
   "Enter your Project title:",
-  "Enter your project description:"
+  "Enter your Project description:",
+  "Enter name of the repo:"
 ];
 
 function writeToFile(fileName, ...data) {
@@ -36,6 +37,10 @@ async function init() {
         {
           message: questions[2],
           name: "desc"
+        },
+        {
+          message: questions[3],
+          name: "repo"
         }
       ])
       .then(function(response) {
@@ -43,9 +48,9 @@ async function init() {
         user = response.username;
       });
     await api.getUser(user);
-    await writeToFile("Readme.md", enteredDetails, api.data);
+    await writeToFile("Readme.md", enteredDetails, api.data, questions);
   } catch (err) {
-    console.log(err);
+    console.log("Can not read properties.");
   }
 }
 init();
