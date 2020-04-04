@@ -1,7 +1,7 @@
 function generateMarkdown(username, title, desc, repo, data) {
   return `
   [![Coding My Life](https://img.shields.io/badge/AtulMahajan-FullStackDeveloper-blue)](https://img.shields.io/)\n
-  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)\n
   # Project Title: ${title}\n
   # Profile Image\n
   ![Screenshot](${data.avatar_url})\n
