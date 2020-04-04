@@ -12,18 +12,22 @@ async function init() {
       {
         message: "Enter your GitHub username:",
         name: "username",
+        type: "input",
       },
       {
         message: "Enter your Project title:",
         name: "title",
+        type: "input",
       },
       {
         message: "Enter your Project description:",
         name: "desc",
+        type: "input",
       },
       {
         message: "Enter name of the repo:",
         name: "repo",
+        type: "input",
       },
     ]);
     const { data } = await api.getUser(username);
