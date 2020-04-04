@@ -1,10 +1,12 @@
-function generateMarkdown(data) {
+function generateMarkdown(username, title, desc, repo, data) {
   return `
-  # Project Title: ${data[0].title}\n
+  [![Coding My Life](https://img.shields.io/badge/AtulMahajan-FullStackDeveloper-blue)](https://img.shields.io/)\n
+  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+  # Project Title: ${title}\n
   # Profile Image\n
-  ![Screenshot](${data[1].data.avatar_url})\n
+  ![Screenshot](${data.avatar_url})\n
   # Email Address\n
-  ${data[1].data.email}\n
+  ${data.email}\n
   Table of Contents:\n
   [Description](#Description:)\n
   [Installation](#Installation:)\n
@@ -14,22 +16,26 @@ function generateMarkdown(data) {
   [Tests](#Tests:)\n
   [Questions](#Questions:)\n
   # Description:\n
-  ${data[0].desc}\n
+  ${desc}\n
   # Installation:\n
   Navigate to following folder\n
-  ${data[1].data.html_url + "/" + data[0].repo}\n
+  ${data.html_url + "/" + repo}\n
   Clone the Repo\n
   To view the web pages go to the following link\n
-  https://${data[1].data.login}.github.io/${data[0].repo}\n
+  https://${data.login}.github.io/${repo}\n
   # Usage\n
+  This project generates a read me file using questions answered by the user.\n
   # Licence\n
+  [![Version Badge](https://img.shields.io/badge/Version-1.0.1-green)](https://shields.io/#your-badge)\n
   # Contributing\n
+  This project is an open source and anyone is free to use with the reference to it.\n
   # Tests\n
+  Github Api is called and then required information is retrieved for testing and generating readme file.\n 
   # Questions\n
-  1. ${data[2][0]}\n
-  2. ${data[2][1]}\n
-  3. ${data[2][2]}\n
-  4. ${data[2][3]}\n
+  1. Enter your GitHub username:\n
+  2. Enter your Project title:\n
+  3. Enter your Project description:\n
+  4. Enter name of the repo:\n
 `;
 }
 
