@@ -31,7 +31,6 @@ async function init() {
       },
     ]);
     const { data } = await api.getUser(username);
-    console.log(data);
     const contents = generateMarkdown(username, title, desc, repo, data);
     await writeFileAsync("Readme.md", contents);
     console.log("Successfully wrote to Readme.md file");
